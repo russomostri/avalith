@@ -15,13 +15,15 @@ class SalesmanMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $role)
     {
-        //dd($next($request));
+        dd($role);
+        
+        /*
         if(Auth::user()->isSalesman()){
             return $next($request);
         }
-        
+        */
         
     }
 }

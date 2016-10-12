@@ -16,11 +16,11 @@
 Route::auth();
 
 
-Route::group(['middleware' => ['salesman','admin']], function(){
+Route::group(['middleware' => ['usertype:vendedor|admin']], function(){
 	
 	Route::get('car','CarController@Index');
 	
-	Route::group(['middleware' => 'admin'] , function(){
+	Route::group(['middleware' => ['usertype:admin']] , function(){
 		//Route::get('car','CarController@Index');
 		//Route::resource('car','CarController');
 		Route::resource('brand','BrandController');
